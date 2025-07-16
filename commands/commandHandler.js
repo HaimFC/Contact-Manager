@@ -1,5 +1,6 @@
 const fs = require('fs');
 const valid = require('../utils/validation');
+const service = require('../services/contactService')
 
 
 function mainFunction(){
@@ -22,29 +23,29 @@ function handleCommand(args) {
         valid.isValidName(name);
         valid.isValidEmail(email);
         valid.isValidPhone(phone);
-        addContact(name, email, phone);
+        service.addContact(name, email, phone);
         break;
 
       case 'delete':
-        deleteContact(name);
+        service.deleteContact(name);
         break;
 
       case 'list':
-        listContacts();
+        service.listContacts();
         break;
 
       case 'search':
         if (name.includes("@")) {
           valid.isValidEmail(name); // email
-          searchContactByMail(name);
+          service.searchContactByEmail(name);
         } else {
           valid.isValidName(name); // name
-          searchContactByName(name);
+          service.searchContactByName(name);
         }
         break;
 
       case 'help':
-        help();
+        service.help();
         break;
 
       default:
