@@ -1,0 +1,23 @@
+{
+  "name": "contact-manager",
+  "version": "1.0.0",
+  "main": "app.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HaimFC/Contact-Manager.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HaimFC/Contact-Manager/issues"
+  },
+  "homepage": "https://github.com/HaimFC/Contact-Manager#readme",
+  "description": "",
+  "devDependencies": {
+    "jest": "^30.0.4"
+  }
+}
