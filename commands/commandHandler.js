@@ -53,7 +53,21 @@ function handleCommand(args) {
     }
   } catch (error) {
     console.error(error.message);
+    showCommandUsage(args[0]); 
   }
+}
+
+function showCommandUsage(command) {
+  const usage = {
+    add: 'Usage: node contacts.js add "name" "email" "phone"',
+    delete: 'Usage: node contacts.js delete "email"',
+    search: 'Usage: node contacts.js search "name" | "email"',
+    list: 'Usage: node contacts.js list',
+    help: 'Usage: node contacts.js help',
+    default: 'Usage: node contacts.js [add|list|search|delete|help] [arguments]'
+  };
+
+  console.log(usage[command] || usage.default);
 }
 
 module.exports = mainFunction;
